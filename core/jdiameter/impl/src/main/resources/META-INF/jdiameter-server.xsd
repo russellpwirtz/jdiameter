@@ -6,526 +6,526 @@
 <!-- All rights reserved.                                                   -->
 <!-- ====================================================================== -->
 
-<xsi:schema
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://www.jdiameter.org/jdiameter-server"
-    xmlns="http://www.jdiameter.org/jdiameter-server"
-    elementFormDefault="qualified">
+<xsd:schema
+        targetNamespace="http://www.jdiameter.org/jdiameter-server"
+        xmlns="http://www.jdiameter.org/jdiameter-server"
+        elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-    <xsi:element name="Configuration">
-        <xsi:annotation>
-            <xsi:documentation>JDiameter Client configuration</xsi:documentation>
-        </xsi:annotation>
-        <xsi:complexType>
-            <xsi:sequence>
-                <xsi:element ref="LocalPeer" minOccurs="1" maxOccurs="1"/>
-                <xsi:element ref="Parameters" minOccurs="1" maxOccurs="1"/>
-                <xsi:element ref="Network" minOccurs="1" maxOccurs="1"/>
-                <xsi:element ref="Security" minOccurs="0" maxOccurs="1"/>
-                <xsi:element ref="Extensions" minOccurs="0" maxOccurs="1"/>
-            </xsi:sequence>
-        </xsi:complexType>
-    </xsi:element>
+    <xsd:element name="Configuration">
+        <xsd:annotation>
+            <xsd:documentation>JDiameter Client configuration</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="LocalPeer" minOccurs="1" maxOccurs="1"/>
+                <xsd:element ref="Parameters" minOccurs="1" maxOccurs="1"/>
+                <xsd:element ref="Network" minOccurs="1" maxOccurs="1"/>
+                <xsd:element ref="Security" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="Extensions" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
 
-    <xsi:element name="LocalPeer" type="LocalPeerType">
-        <xsi:annotation>
-            <xsi:documentation>Local peer parameters</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="LocalPeer" type="LocalPeerType">
+        <xsd:annotation>
+            <xsd:documentation>Local peer parameters</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="LocalPeerType">
-        <xsi:sequence>
-            <xsi:element name="URI" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Local peer uri.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:string" use="required" />
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element ref="IPAddresses" minOccurs="0" maxOccurs="1" />
-            <xsi:element name="Realm" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Local peer realm.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:string" use="required" />
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="VendorID" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Local peer vendor identificator.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:integer" use="required" />
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="ProductName" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Product name of stack.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:string" use="required" />
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="FirmwareRevision" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Firmware revision of stack.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:integer" use="required" />
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element ref="Applications" minOccurs="0" maxOccurs="1" />
-            <xsi:element ref="OverloadMonitor" minOccurs="0" maxOccurs="1" />        </xsi:sequence>
+    <xsd:complexType name="LocalPeerType">
+        <xsd:sequence>
+            <xsd:element name="URI" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Local peer uri.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:string" use="required" />
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element ref="IPAddresses" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Realm" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Local peer realm.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:string" use="required" />
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="VendorID" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Local peer vendor identificator.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:integer" use="required" />
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ProductName" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Product name of stack.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:string" use="required" />
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="FirmwareRevision" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Firmware revision of stack.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:integer" use="required" />
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element ref="Applications" minOccurs="0" maxOccurs="1" />
+            <xsd:element ref="OverloadMonitor" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
         <!-- must match SecurityData.name -->
-        <xsi:attribute name="security_ref"  type="xsi:string" use="optional"/>
-    </xsi:complexType>
+        <xsd:attribute name="security_ref"  type="xsd:string" use="optional"/>
+    </xsd:complexType>
 
-    <xsi:element name="IPAddresses" type="IPAddressesType">
-        <xsi:annotation>
-            <xsi:documentation>Local peer ip addresses</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="IPAddresses" type="IPAddressesType">
+        <xsd:annotation>
+            <xsd:documentation>Local peer ip addresses</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="IPAddressesType">
-        <xsi:sequence>
-            <xsi:element name="IPAddress" minOccurs="1" maxOccurs="unbounded">
-                 <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:string" use="required"/>
-                </xsi:complexType>                
-            </xsi:element>
-        </xsi:sequence>
-    </xsi:complexType>
+    <xsd:complexType name="IPAddressesType">
+        <xsd:sequence>
+            <xsd:element name="IPAddress" minOccurs="1" maxOccurs="unbounded">
+                 <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:string" use="required"/>
+                </xsd:complexType>                
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:element name="OverloadMonitor" type="OverloadMonitorType">
-        <xsi:annotation>
-            <xsi:documentation>Local peer overload monitor table</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="OverloadMonitor" type="OverloadMonitorType">
+        <xsd:annotation>
+            <xsd:documentation>Local peer overload monitor table</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="OverloadMonitorType">
-        <xsi:sequence>
-            <xsi:element ref="Entry" minOccurs="1" maxOccurs="unbounded"/>
-        </xsi:sequence>
-    </xsi:complexType>
+    <xsd:complexType name="OverloadMonitorType">
+        <xsd:sequence>
+            <xsd:element ref="Entry" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:element name="Entry">
-        <xsi:complexType>
-            <xsi:sequence>
-                <xsi:element ref="ApplicationID"/>
-            </xsi:sequence>
-            <xsi:attribute name="index" type="xsi:integer" use="required"/>
-            <xsi:attribute name="lowThreshold"  type="xsi:double" use="required"/>
-            <xsi:attribute name="highThreshold" type="xsi:double" use="required"/>
-        </xsi:complexType>
-    </xsi:element>
+    <xsd:element name="Entry">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="ApplicationID"/>
+            </xsd:sequence>
+            <xsd:attribute name="index" type="xsd:integer" use="required"/>
+            <xsd:attribute name="lowThreshold"  type="xsd:double" use="required"/>
+            <xsd:attribute name="highThreshold" type="xsd:double" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
 
-    <xsi:element name="Applications" type="ApplicationsType">
-        <xsi:annotation>
-            <xsi:documentation>Local peer default applications</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="Applications" type="ApplicationsType">
+        <xsd:annotation>
+            <xsd:documentation>Local peer default applications</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="ApplicationsType">
-        <xsi:sequence>
-            <xsi:element ref="ApplicationID" minOccurs="0" maxOccurs="unbounded"/>
-        </xsi:sequence>
-    </xsi:complexType>
+    <xsd:complexType name="ApplicationsType">
+        <xsd:sequence>
+            <xsd:element ref="ApplicationID" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:element name="ApplicationID" type="ApplicationIDType">
-        <xsi:annotation>
-            <xsi:documentation>ApplicationID of application</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="ApplicationID" type="ApplicationIDType">
+        <xsd:annotation>
+            <xsd:documentation>ApplicationID of application</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="ApplicationIDType">
-        <xsi:sequence>
-            <xsi:element name="VendorId" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Vendor id.</xsi:documentation>
-                </xsi:annotation>
-                 <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:integer" use="required"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="AuthApplId" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Authentication application id.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:integer" use="required"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="AcctApplId" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Accounting application id.</xsi:documentation>
-                </xsi:annotation>
-                 <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:integer" use="required"/>
-                </xsi:complexType>                
-            </xsi:element>
-        </xsi:sequence>
-    </xsi:complexType>
+    <xsd:complexType name="ApplicationIDType">
+        <xsd:sequence>
+            <xsd:element name="VendorId" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Vendor id.</xsd:documentation>
+                </xsd:annotation>
+                 <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:integer" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AuthApplId" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Authentication application id.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:integer" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AcctApplId" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Accounting application id.</xsd:documentation>
+                </xsd:annotation>
+                 <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:integer" use="required"/>
+                </xsd:complexType>                
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:element name="Parameters" type="ParametersType">
-        <xsi:annotation>
-            <xsi:documentation>Stack parameters</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="Parameters" type="ParametersType">
+        <xsd:annotation>
+            <xsd:documentation>Stack parameters</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="ParametersType">
-        <xsi:sequence>
-            <xsi:element name="AcceptUndefinedPeer" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>True if local peer must accept undefined peers</xsi:documentation>
-                </xsi:annotation>
-                 <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:boolean" use="required"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="DuplicateProtection" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>True if duplication protection is ON</xsi:documentation>
-                </xsi:annotation>
-                 <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:boolean" use="required"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="DuplicateTimer" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Live time of duplication entry</xsi:documentation>
-                </xsi:annotation>
-                 <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:long" use="required"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="DuplicateSize" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Number of duplicate answers to store</xsi:documentation>
-                </xsi:annotation>
-                 <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:integer" use="required"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="UseUriAsFqdn" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Set Origin-Host-Name Avp as Uri into CER message. Default value is false</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="value" type="xsi:boolean" use="required"/>
-               </xsi:complexType>
-            </xsi:element>            
-            <xsi:element name="QueueSize" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>QueueSize of fsm event queue</xsi:documentation>
-                </xsi:annotation>
-                 <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:integer" use="required"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="MessageTimeOut" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Message time out in milliseconds.</xsi:documentation>
-                </xsi:annotation>
-                 <xsi:complexType>
-                    <xsi:attribute name="value" type="xsi:long" use="required"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="StopTimeOut" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Default stop time out in milliseconds.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="value" type="xsi:long" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="CeaTimeOut" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>CEA command time out in milliseconds.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="value" type="xsi:long" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="IacTimeOut" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Value of inactive time in milliseconds.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="value" type="xsi:long" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="DwaTimeOut" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>DWA command time out in milliseconds.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="value" type="xsi:long" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="DpaTimeOut" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>DPA command time out in milliseconds.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="value" type="xsi:long" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="RecTimeOut" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Peer reconnect pause in milliseconds.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="value" type="xsi:long" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="BindDelay" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Server Socket bind delay in milliseconds.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="value" type="xsi:long" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="PeerFSMThreadCount" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Peer FSM Thread Count.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="value" type="xsi:integer" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="Statistics" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Statistics configuration</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="pause" type="xsi:long" use="required"/>
-                    <xsi:attribute name="delay" type="xsi:long" use="required"/>
-                    <xsi:attribute name="enabled" type="xsi:boolean" use="required"/>
-                    <xsi:attribute name="active_records" type="xsi:string" use="optional"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element ref="Concurrent" minOccurs="0" maxOccurs="1"/>
-            <xsi:element name="Dictionary" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Dictionary and Validator configuration</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="class" type="xsi:string" use="optional"/>
-                    <xsi:attribute name="enabled" type="xsi:string" use="optional"/>
-                    <xsi:attribute name="sendLevel" type="xsi:string" use="optional"/>
-                    <xsi:attribute name="receiveLevel" type="xsi:string" use="optional"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="RequestTable" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Router Request Table cache configuration</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="size" type="xsi:integer" use="required"/>
-                    <xsi:attribute name="clear_size" type="xsi:integer" use="required"/>
-                </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="Connection" minOccurs="0" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Sets java class name of connection used for transport, by default its set to 'org.jdiameter.client.impl.transport.tcp.TCPClientConnection'</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="value" type="xsi:string" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-         </xsi:sequence>
-    </xsi:complexType>
+    <xsd:complexType name="ParametersType">
+        <xsd:sequence>
+            <xsd:element name="AcceptUndefinedPeer" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>True if local peer must accept undefined peers</xsd:documentation>
+                </xsd:annotation>
+                 <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:boolean" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DuplicateProtection" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>True if duplication protection is ON</xsd:documentation>
+                </xsd:annotation>
+                 <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:boolean" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DuplicateTimer" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Live time of duplication entry</xsd:documentation>
+                </xsd:annotation>
+                 <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:long" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DuplicateSize" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Number of duplicate answers to store</xsd:documentation>
+                </xsd:annotation>
+                 <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:integer" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UseUriAsFqdn" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Set Origin-Host-Name Avp as Uri into CER message. Default value is false</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="value" type="xsd:boolean" use="required"/>
+               </xsd:complexType>
+            </xsd:element>            
+            <xsd:element name="QueueSize" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>QueueSize of fsm event queue</xsd:documentation>
+                </xsd:annotation>
+                 <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:integer" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="MessageTimeOut" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Message time out in milliseconds.</xsd:documentation>
+                </xsd:annotation>
+                 <xsd:complexType>
+                    <xsd:attribute name="value" type="xsd:long" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="StopTimeOut" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Default stop time out in milliseconds.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="value" type="xsd:long" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CeaTimeOut" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>CEA command time out in milliseconds.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="value" type="xsd:long" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="IacTimeOut" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Value of inactive time in milliseconds.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="value" type="xsd:long" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DwaTimeOut" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>DWA command time out in milliseconds.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="value" type="xsd:long" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DpaTimeOut" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>DPA command time out in milliseconds.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="value" type="xsd:long" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="RecTimeOut" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Peer reconnect pause in milliseconds.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="value" type="xsd:long" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="BindDelay" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Server Socket bind delay in milliseconds.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="value" type="xsd:long" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="PeerFSMThreadCount" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Peer FSM Thread Count.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="value" type="xsd:integer" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Statistics" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Statistics configuration</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="pause" type="xsd:long" use="required"/>
+                    <xsd:attribute name="delay" type="xsd:long" use="required"/>
+                    <xsd:attribute name="enabled" type="xsd:boolean" use="required"/>
+                    <xsd:attribute name="active_records" type="xsd:string" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element ref="Concurrent" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Dictionary" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Dictionary and Validator configuration</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="class" type="xsd:string" use="optional"/>
+                    <xsd:attribute name="enabled" type="xsd:string" use="optional"/>
+                    <xsd:attribute name="sendLevel" type="xsd:string" use="optional"/>
+                    <xsd:attribute name="receiveLevel" type="xsd:string" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="RequestTable" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Router Request Table cache configuration</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="size" type="xsd:integer" use="required"/>
+                    <xsd:attribute name="clear_size" type="xsd:integer" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Connection" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Sets java class name of connection used for transport, by default its set to 'org.jdiameter.client.impl.transport.tcp.TCPClientConnection'</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="value" type="xsd:string" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:element name="Concurrent" type="ConcurrentType">
-        <xsi:annotation>
-            <xsi:documentation>Parameters of concurrent part of stack</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="Concurrent" type="ConcurrentType">
+        <xsd:annotation>
+            <xsd:documentation>Parameters of concurrent part of stack</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="ConcurrentType">
-        <xsi:sequence>
-            <xsi:element ref="Entity" minOccurs="0" maxOccurs="unbounded"/>
-        </xsi:sequence>
-    </xsi:complexType>
+    <xsd:complexType name="ConcurrentType">
+        <xsd:sequence>
+            <xsd:element ref="Entity" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:element name="Entity" type="EntityType">
-        <xsi:annotation>
-            <xsi:documentation>Concurrent entity</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="Entity" type="EntityType">
+        <xsd:annotation>
+            <xsd:documentation>Concurrent entity</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:simpleType name="EntityNames">
-        <xsi:restriction base="xsi:string">
-            <xsi:enumeration value="ThreadGroup"/>
-            <xsi:enumeration value="ProcessingMessageTimer"/>
-            <xsi:enumeration value="DuplicationMessageTimer"/>
-            <xsi:enumeration value="RedirectMessageTimer"/>
-            <xsi:enumeration value="PeerOverloadTimer"/>
-            <xsi:enumeration value="ConnectionTimer"/>
-            <xsi:enumeration value="StatisticTimer"/>
-            <xsi:enumeration value="ApplicationSession"/>
-        </xsi:restriction>
-    </xsi:simpleType>
-    <xsi:complexType name="EntityType">
-        <xsi:attribute name="name" type="EntityNames" use="required"/>
-        <xsi:attribute name="description" type="xsi:string" use="optional"/>
-        <xsi:attribute name="size" type="xsi:int" use="required"/>
-    </xsi:complexType>
+    <xsd:simpleType name="EntityNames">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ThreadGroup"/>
+            <xsd:enumeration value="ProcessingMessageTimer"/>
+            <xsd:enumeration value="DuplicationMessageTimer"/>
+            <xsd:enumeration value="RedirectMessageTimer"/>
+            <xsd:enumeration value="PeerOverloadTimer"/>
+            <xsd:enumeration value="ConnectionTimer"/>
+            <xsd:enumeration value="StatisticTimer"/>
+            <xsd:enumeration value="ApplicationSession"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="EntityType">
+        <xsd:attribute name="name" type="EntityNames" use="required"/>
+        <xsd:attribute name="description" type="xsd:string" use="optional"/>
+        <xsd:attribute name="size" type="xsd:int" use="required"/>
+    </xsd:complexType>
 
-    <xsi:element name="Network" type="NetworkType">
-        <xsi:annotation>
-            <xsi:documentation>Network descriptions</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="Network" type="NetworkType">
+        <xsd:annotation>
+            <xsd:documentation>Network descriptions</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="NetworkType">
-        <xsi:sequence>
-            <xsi:element ref="Peers" minOccurs="1" maxOccurs="1"/>
-            <xsi:element ref="Realms" minOccurs="1" maxOccurs="1"/>
-        </xsi:sequence>
-    </xsi:complexType>
+    <xsd:complexType name="NetworkType">
+        <xsd:sequence>
+            <xsd:element ref="Peers" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="Realms" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:element name="Peers" type="PeersType">
-        <xsi:annotation>
-            <xsi:documentation>Network peers</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="Peers" type="PeersType">
+        <xsd:annotation>
+            <xsd:documentation>Network peers</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="PeersType">
-        <xsi:sequence>
-            <xsi:element name="Peer" minOccurs="1" maxOccurs="unbounded">
-                <xsi:annotation>
-                    <xsi:documentation>Peer description.</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                   <xsi:attribute name="name" type="xsi:string" use="required"/>
-                   <xsi:attribute name="ip" type="xsi:string" use="optional"/>
-                   <xsi:attribute name="portRange" type="xsi:string" use="optional"/>
-                   <xsi:attribute name="attempt_connect" type="xsi:boolean" use="required"/>
-                   <xsi:attribute name="rating" type="xsi:integer" use="required"/>
-                   <xsi:attribute name="security_ref" type="xsi:string" use="optional"/>
-               </xsi:complexType>
-            </xsi:element>
-        </xsi:sequence>
-    </xsi:complexType>
+    <xsd:complexType name="PeersType">
+        <xsd:sequence>
+            <xsd:element name="Peer" minOccurs="1" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>Peer description.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                   <xsd:attribute name="name" type="xsd:string" use="required"/>
+                   <xsd:attribute name="ip" type="xsd:string" use="optional"/>
+                   <xsd:attribute name="portRange" type="xsd:string" use="optional"/>
+                   <xsd:attribute name="attempt_connect" type="xsd:boolean" use="required"/>
+                   <xsd:attribute name="rating" type="xsd:integer" use="required"/>
+                   <xsd:attribute name="security_ref" type="xsd:string" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:element name="Realms" type="RealmsType">
-        <xsi:annotation>
-            <xsi:documentation>Realms description</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="Realms" type="RealmsType">
+        <xsd:annotation>
+            <xsd:documentation>Realms description</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="RealmsType">
-        <xsi:sequence>
-            <xsi:element name="Realm" minOccurs="1" maxOccurs="unbounded">
-                <xsi:annotation>
-                    <xsi:documentation>Realm description</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:sequence>
-                        <xsi:element ref="ApplicationID" />
-                        <xsi:element name="Agent" type="AgentType" maxOccurs="1" minOccurs="0"/>
-                    </xsi:sequence>
-                   <xsi:attribute name="name"  type="xsi:string" use="required"/>
-                   <xsi:attribute name="peers" type="xsi:string" use="required"/>
-                   <xsi:attribute name="local_action" type="xsi:string" use="required"/>
-                   <xsi:attribute name="dynamic"  type="xsi:boolean" use="required"/>
-                   <xsi:attribute name="exp_time" type="xsi:long" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-        </xsi:sequence>
-    </xsi:complexType>
+    <xsd:complexType name="RealmsType">
+        <xsd:sequence>
+            <xsd:element name="Realm" minOccurs="1" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>Realm description</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="ApplicationID" />
+                        <xsd:element name="Agent" type="AgentType" maxOccurs="1" minOccurs="0"/>
+                    </xsd:sequence>
+                   <xsd:attribute name="name"  type="xsd:string" use="required"/>
+                   <xsd:attribute name="peers" type="xsd:string" use="required"/>
+                   <xsd:attribute name="local_action" type="xsd:string" use="required"/>
+                   <xsd:attribute name="dynamic"  type="xsd:boolean" use="required"/>
+                   <xsd:attribute name="exp_time" type="xsd:long" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:element name="Security" type="SecurityType">
-        <xsi:annotation>
-            <xsi:documentation>Security descriptions</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="Security" type="SecurityType">
+        <xsd:annotation>
+            <xsd:documentation>Security descriptions</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="SecurityType">
-        <xsi:sequence>
-            <xsi:element ref="SecurityData" minOccurs="1" maxOccurs="unbounded"/>
-        </xsi:sequence>
-    </xsi:complexType>
+    <xsd:complexType name="SecurityType">
+        <xsd:sequence>
+            <xsd:element ref="SecurityData" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:element name="SecurityData" type="SecurityDataType">
-        <xsi:annotation>
-            <xsi:documentation>SSL description</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="SecurityData" type="SecurityDataType">
+        <xsd:annotation>
+            <xsd:documentation>SSL description</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="SecurityDataType">
-        <xsi:sequence>
-            <xsi:element name="CipherSuites" minOccurs="0" maxOccurs="1" type="xsi:string">
-                <xsi:annotation>
-                    <xsi:documentation>Cipher suites separated by ','</xsi:documentation>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element name="KeyData" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Key description</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="manager" type="xsi:string" use="required"/>
-                    <xsi:attribute name="store" type="xsi:string" use="required"/>
-                    <xsi:attribute name="file" type="xsi:string" use="required"/>
-                    <xsi:attribute name="pwd" type="xsi:string" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-            <xsi:element name="TrustData" minOccurs="1" maxOccurs="1">
-                <xsi:annotation>
-                    <xsi:documentation>Trust description</xsi:documentation>
-                </xsi:annotation>
-                <xsi:complexType>
-                    <xsi:attribute name="manager" type="xsi:string" use="required"/>
-                    <xsi:attribute name="store" type="xsi:string" use="required"/>
-                    <xsi:attribute name="file" type="xsi:string" use="required"/>
-                    <xsi:attribute name="pwd" type="xsi:string" use="required"/>
-               </xsi:complexType>
-            </xsi:element>
-        </xsi:sequence>
-        <xsi:attribute name="name" type="xsi:string"  use="required"/>
-        <xsi:attribute name="protocol" type="xsi:string" use="required"/>
-        <xsi:attribute name="enable_session_creation" type="xsi:boolean" use="required"/>
-        <xsi:attribute name="use_client_mode" type="xsi:boolean" use="required"/>
-        <xsi:attribute name="need_client_auth" type="xsi:boolean" use="required"/>
-    </xsi:complexType>    
+    <xsd:complexType name="SecurityDataType">
+        <xsd:sequence>
+            <xsd:element name="CipherSuites" minOccurs="0" maxOccurs="1" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Cipher suites separated by ','</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="KeyData" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Key description</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="manager" type="xsd:string" use="required"/>
+                    <xsd:attribute name="store" type="xsd:string" use="required"/>
+                    <xsd:attribute name="file" type="xsd:string" use="required"/>
+                    <xsd:attribute name="pwd" type="xsd:string" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TrustData" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Trust description</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="manager" type="xsd:string" use="required"/>
+                    <xsd:attribute name="store" type="xsd:string" use="required"/>
+                    <xsd:attribute name="file" type="xsd:string" use="required"/>
+                    <xsd:attribute name="pwd" type="xsd:string" use="required"/>
+               </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string"  use="required"/>
+        <xsd:attribute name="protocol" type="xsd:string" use="required"/>
+        <xsd:attribute name="enable_session_creation" type="xsd:boolean" use="required"/>
+        <xsd:attribute name="use_client_mode" type="xsd:boolean" use="required"/>
+        <xsd:attribute name="need_client_auth" type="xsd:boolean" use="required"/>
+    </xsd:complexType>    
 
-    <xsi:element name="Extensions" type="xsi:anyType">
-        <xsi:annotation>
-            <xsi:documentation>Extension parameters</xsi:documentation>
-        </xsi:annotation>
-    </xsi:element>
+    <xsd:element name="Extensions" type="xsd:anyType">
+        <xsd:annotation>
+            <xsd:documentation>Extension parameters</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-    <xsi:complexType name="AgentType">
-        <xsi:sequence>
-            <xsi:element
+    <xsd:complexType name="AgentType">
+        <xsd:sequence>
+            <xsd:element
                 name="Properties"
                 type="PropertiesType" maxOccurs="1" minOccurs="1">
-            </xsi:element>
-        </xsi:sequence>
-    </xsi:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:complexType name="PropertiesType">
-        <xsi:sequence>
-            <xsi:element
+    <xsd:complexType name="PropertiesType">
+        <xsd:sequence>
+            <xsd:element
                 name="Property"
                 type="PropertyType" maxOccurs="unbounded" minOccurs="0">
-            </xsi:element>
-        </xsi:sequence>
-    </xsi:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-    <xsi:complexType name="PropertyType">
-        <xsi:attribute
+    <xsd:complexType name="PropertyType">
+        <xsd:attribute
             name="name"
-            type="xsi:string">
-        </xsi:attribute>
-        <xsi:attribute
+            type="xsd:string">
+        </xsd:attribute>
+        <xsd:attribute
             name="value"
-            type="xsi:string">
-        </xsi:attribute>
-    </xsi:complexType>
-</xsi:schema>
+            type="xsd:string">
+        </xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>
